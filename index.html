@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="deveb : github pages">
+    <title>eunb.it</title>
+    <style>
+      html,
+      body {
+        background-color: #282a36;
+        color: #eff0eb;
+        height: 100%;
+        font-family: Consolas, monaco, monospace; 
+        font-size: 12px;
+      }
+
+      .time {
+        color: #57c7ff;
+      }
+      .arrow {
+        color: #ff5c57;
+      }
+      .path {
+        color: #5af78e;
+      }
+      /* Links */
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      a:focus,
+      a:hover {
+        opacity:0.8;
+      }
+    </style>
+  </head>
+
+  <body>
+    <span class='time'>[00:00]</span><span class='path'><a href='mailto:hwang@eunb.it'>hwang@eunb.it</a></span><span class='arrow'>&gt;</span>  Hello World!<br/>
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function() {
+        document.getElementsByClassName('time')[0].innerHTML = '[' + new Date().toISOString() + ']';
+      });
+    </script>
+    <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+      try {
+        var pageTracker = _gat._getTracker("UA-63686953-1");
+      pageTracker._trackPageview();
+      } catch(err) {}
+    </script>
+
+  </body>
+</html>
