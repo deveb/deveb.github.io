@@ -1,0 +1,6 @@
+[submodule "NotFoundGames"]
+	path = NotFoundGames
+	url = https://github.com/deveb/NotFoundGames.git
+[submodule "404"]
+	path = 404
+	url = https://github.com/deveb/NotFoundGames.git
