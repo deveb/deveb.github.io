@@ -34,14 +34,29 @@
       a:hover {
         opacity:0.8;
       }
+      p {
+        margin:0;
+      }
     </style>
   </head>
 
   <body>
-    <span class='time'>[00:00]</span><span class='path'><a href='mailto:hwang@eunb.it'>hwang@eunb.it</a></span><span class='arrow'>&gt;</span>  Hello World!<br/>
+    <p>
+      <span class='time'>[00:00]</span>
+      <span class='path'><a href='mailto:hwang@eunb.it'>hwang@eunb.it</a></span>
+      <span class='arrow'>&gt;</span>  Hi
+    </p>
+    <p>
+      <span class='time'>[00:00]</span>
+      <span class='path'><a href='mailto:hwang@eunb.it'>hwang@eunb.it</a></span>
+      <span class='arrow'>&gt;</span>  I'm <a class='path' href='http://hwang.eunb.it' target='_blank'>EunBit Hwang</a>
+    </p>
     <script type="text/javascript">
       document.addEventListener("DOMContentLoaded", function() {
-        document.getElementsByClassName('time')[0].innerHTML = '[' + new Date().toISOString() + ']';
+        var timeElements = document.getElementsByClassName('time')
+        for(var i = 0; i < timeElements.length; i++){
+          timeElements[i].innerHTML = '[' + new Date().toString().substring(16, 24) + ']';
+        }
       });
     </script>
     <script type="text/javascript">
