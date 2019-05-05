@@ -4,3 +4,6 @@
 [submodule "404"]
 	path = 404
 	url = https://github.com/deveb/NotFoundGames.git
+[submodule "resume"]
+	path = resume
+	url = https://github.com/deveb/resume.git
