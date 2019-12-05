@@ -37,6 +37,16 @@
       p {
         margin:0;
       }
+      input {
+        outline: none;
+        border: 0;
+        background: transparent;
+        caret-color: #eff0eb;
+        display:inline;
+        font-family: Consolas, monaco, monospace;
+        font-size: 12px;
+        color: #eff0eb;
+      }
     </style>
   </head>
 
@@ -46,10 +56,11 @@
       <span class='path'><a href='mailto:hwang@eunb.it'>hwang@eunb.it</a></span>
       <span class='arrow'>&gt;</span>  Hi
     </p>
-    <p>
+    <p id="text">
       <span class='time'>[00:00]</span>
       <span class='path'><a href='mailto:hwang@eunb.it'>hwang@eunb.it</a></span>
-      <span class='arrow'>&gt;</span>  I'm <a class='path' href='/resume'>EunBit Hwang</a>
+      <span class='arrow'>&gt;</span>
+      <input type="text" />
     </p>
     <script type="text/javascript">
       document.addEventListener("DOMContentLoaded", function() {
@@ -57,6 +68,31 @@
         for(var i = 0; i < timeElements.length; i++){
           timeElements[i].innerHTML = '[' + new Date().toString().substring(16, 24) + ']';
         }
+        document.getElementById("text").lastElementChild.focus();
+
+        var text = [
+          "I'm <a class='path' href='/resume'>EunBit Hwang</a>",
+          "I'm a Software Engineer.",
+          // "I like the process of solving problems and solving them one by one, regardless of the domain.",
+          // "Problem solving is my best motivation. I tend to study technology to solve them and I feel fulfilled when I see things actually works.",
+          // "Even with the same problem, I feel a challenge on large systems and interested in parallel computing and distributed processing.",
+        ]
+        function popReply () {
+          if (text.length == 0) return
+          var reply = document.createElement('p')
+          reply.innerHTML = "<span class='time'>[" + new Date().toString().substring(16, 24) + "]</span>" +
+            "<span class='path'><a href='mailto:hwang@eunb.it'> hwang@eunb.it </a></span>" +
+            "<span class='arrow'>&gt;</span> " + text.shift()
+          document.body.getElementsByTagName("p")[0].appendChild(reply);
+          document.getElementById("text").getElementsByTagName("span")[0].innerHTML = "[" + new Date().toString().substring(16, 24) + "]"
+          document.getElementById("text").lastElementChild.value = ""
+          document.getElementById("text").lastElementChild.focus();
+        }
+        document.querySelector('input').addEventListener('keyup', function() {
+          if (window.event.keyCode == 13) {
+            popReply()
+          }
+        });
       });
     </script>
     
