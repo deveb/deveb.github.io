@@ -1,2 +1,2 @@
 # [eunb.it](http://eunb.it)
-github pages
+Personal website using github pages
