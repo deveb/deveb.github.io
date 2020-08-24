@@ -5,6 +5,7 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="description" content="deveb : github pages">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>eunb.it</title>
     <style>
       html,
@@ -93,6 +94,10 @@
             popReply()
           }
         });
+        document.body.addEventListener('touchend', popReply);
+        document.body.onclick = function(e) {
+          document.getElementById("text").lastElementChild.focus();
+        }
       });
     </script>
     
